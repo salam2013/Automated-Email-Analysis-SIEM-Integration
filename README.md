@@ -30,6 +30,12 @@ This project demonstrates a **cybersecurity automation pipeline** that monitors 
 5. **Ship** – Send events to Splunk via HEC (index/sourcetype configurable)
 6. **Act** – Search, alert, and visualize in Splunk
 
+
+<img width="683" height="826" alt="Screenshot 2025-08-24 225349" src="https://github.com/user-attachments/assets/a2500911-844e-4899-a90a-d3f251323924" />
+
+
+
+
 ```
 Gmail INBOX/Spam → Parser/Extractor → VirusTotal Scan → JSON Event → Splunk HEC → Dashboards & Alerts
 ```
@@ -71,6 +77,12 @@ EMAIL_PASS=your-16-char-google-app-password
 # VirusTotal
 VT_API_KEY=your_virustotal_api_key
 
+
+<img width="175" height="237" alt="Screenshot 2025-08-26 232118" src="https://github.com/user-attachments/assets/bb0566da-0868-4582-b0c0-fb53b765b80a" />
+
+
+
+
 # Splunk HEC
 SPLUNK_URL=https://localhost:8088
 SPLUNK_TOKEN=00000000-0000-0000-0000-000000000000
@@ -80,6 +92,14 @@ SPLUNK_SOURCETYPE=email_automation
 SPLUNK_VERIFY_SSL=true
 # SPLUNK_CA_CERT=certs/splunk_ca.pem   # use this if Splunk uses a self-signed cert
 ```
+
+
+<img width="1887" height="840" alt="Email automation project" src="https://github.com/user-attachments/assets/67297128-cf1e-4d3b-9819-60e523f0bb97" />
+
+
+
+
+
 
 ---
 
@@ -100,6 +120,16 @@ python src/main.py --mailbox INBOX --limit 25 --push-to-splunk
 # Scan a folder of .eml files (if supported by your main.py build)
 python src/main.py --eml-dir samples --push-to-splunk
 ```
+
+
+
+
+<img width="1448" height="874" alt="image" src="https://github.com/user-attachments/assets/97b8dba3-7ad4-4bea-a270-b84bd69a8fc3" />
+
+
+
+
+
 
 ---
 
@@ -144,6 +174,16 @@ index=main sourcetype=email_automation
 )
 | stats count by url verdict
 ```
+
+
+
+
+<img width="1489" height="756" alt="Screenshot 2025-08-26 233513" src="https://github.com/user-attachments/assets/8fb03e9e-5c67-4fba-a9cf-cd55c5105b56" />
+
+
+
+
+
 
 ---
 
