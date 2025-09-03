@@ -239,3 +239,8 @@ index=main sourcetype=email_automation
 
 Issues and PRs are welcome. If you report a parsing issue, include a sanitized `.eml` sample and steps to reproduce.
  spl as SIEM tool
+
+## Author
+Shuaib Salami A. Cybersecurity consultant.
+
+Date: 03 September 2025
