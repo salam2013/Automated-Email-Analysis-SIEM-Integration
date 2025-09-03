@@ -77,20 +77,6 @@ EMAIL_PASS=your-16-char-google-app-password
 # VirusTotal
 VT_API_KEY=your_virustotal_api_key
 
-
-
-<img width="1447" height="688" alt="Screenshot 2025-09-03 225222" src="https://github.com/user-attachments/assets/e0d34aed-9e5a-4db3-bd02-39851123dd33" />
-
-
-
-
-<img width="1447" height="688" alt="Screenshot 2025-09-03 225222" src="https://github.com/user-attachments/assets/bb3244df-dddf-4a3a-8bd7-f49726f2b0dd" />
-
-
-
-
-
-
 # Splunk HEC
 SPLUNK_URL=https://localhost:8088
 SPLUNK_TOKEN=00000000-0000-0000-0000-000000000000
@@ -100,6 +86,11 @@ SPLUNK_SOURCETYPE=email_automation
 SPLUNK_VERIFY_SSL=true
 # SPLUNK_CA_CERT=certs/splunk_ca.pem   # use this if Splunk uses a self-signed cert
 ```
+
+
+
+<img width="1447" height="688" alt="Screenshot 2025-09-03 225222" src="https://github.com/user-attachments/assets/a5c55bad-0be2-41c3-ac94-34d5faa7e576" />
+
 
 
 <img width="1887" height="840" alt="Email automation project" src="https://github.com/user-attachments/assets/67297128-cf1e-4d3b-9819-60e523f0bb97" />
@@ -238,7 +229,6 @@ index=main sourcetype=email_automation
 * **IOC enrichment**: WHOIS, URLhaus, AbuseIPDB, GreyNoise, ASN/geo
 * **Alerting hooks**: Slack/Microsoft Teams webhooks; email notifications
 * **Policy actions**: optional Gmail/M365 API to quarantine or label suspected phish
-* **Dashboard pack**: saved searches + Splunk dashboards as JSON
 * **Performance**: async scanning, VT rate-limit backoff, local verdict cache
 * **Packaging**: Dockerfile + GitHub Actions CI (lint/test/build), devcontainer
 * **Compliance**: configurable redaction/masking of PII before SIEM ingest
