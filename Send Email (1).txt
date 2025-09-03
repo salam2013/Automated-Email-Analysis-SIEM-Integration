@@ -1,0 +1,78 @@
+import smtplib
+import time
+import random
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# Setup your sender and recipient
+sender_email = "input your email here"
+receiver_email = "enter salam email here"
+password = "your_app_password"  # Your app Password
+
+# I have included these subjects for practice. Kindly note that Gmail may flag this as Spam, that is why we are reading emails from inbox and spam folder in the other script 
+
+subjects = [
+    "You Have Won a Prize from BNS!",
+    "Reset Your BNS Password Now",
+    "Your BNS Invoice is Ready",
+    "Unusual Login Attempt",
+    "Confirm Your Account",
+    "Claim Your BNS Reward",
+    "Your Subscription is Expiring",
+    "Update Your Payment Method",
+    "Security Alert",
+    "Verify Your Identity"
+]
+
+# Fake phishing-style links (safe for training)
+simulated_links = [
+    "https://bnscyberlab.com/claim-reward",
+    "https://bnscyberlab.com-password",
+    "https://bnscyberlab.com-2025",
+    "https://bnscyberlab.com-login",
+    "https://bnscyberlab.com-account",
+    "https://bnscyberlab.com-billing",
+    "https://bnscyberlab.com-now",
+    "https://bnscyberlab.com-subscription",
+    "https://bnscyberlab.com-warning",
+    "https://bnscyberlab.com/free-subscription"
+]
+
+# Corresponding message bodies for each mail
+bodies = [
+    "Congratulations! Click here to claim your reward: {link}",
+    "Reset your password to secure your account: {link}",
+    "Download your invoice from: {link}",
+    "Suspicious login detected. Review now: {link}",
+    "Confirm your account to avoid deactivation: {link}",
+    "You’re eligible for a free reward. Claim here: {link}",
+    "Renew your subscription now: {link}",
+    "Update your payment details to avoid service disruption: {link}",
+    "Urgent: Security alert for your account. Click: {link}",
+    "Verify your identity here: {link}"
+]
+
+# This will send 10 emails (1 per minute)
+for i in range(10):
+    subject = subjects[i]
+    link = simulated_links[i]
+    body_text = bodies[i].format(link=link)
+
+    msg = MIMEMultipart()
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body_text, 'plain'))
+
+    try:
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, msg.as_string())
+        server.quit()
+        print(f"[+] Sent email {i+1}: {subject}")
+    except Exception as e:
+        print(f"[-] Failed to send email {i+1}: {e}")
+
+    # This tells it to wait 60 seconds before sending the next email
+    time.sleep(60)
