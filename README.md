@@ -79,7 +79,8 @@ VT_API_KEY=your_virustotal_api_key
 
 
 
-<img width="175" height="237" alt="Screenshot 2025-08-26 232118" src="https://github.com/user-attachments/assets/9177bf54-996c-4027-abb9-94cb3ec8f386" />
+<img width="1447" height="688" alt="Screenshot 2025-09-03 225222" src="https://github.com/user-attachments/assets/bb3244df-dddf-4a3a-8bd7-f49726f2b0dd" />
+
 
 
 
