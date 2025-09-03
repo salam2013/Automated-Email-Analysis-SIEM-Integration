@@ -1,0 +1,8 @@
+EMAIL_USER=  # write the email address you want Python to read the inbox.
+
+EMAIL_PASS=
+VT_API_KEY=
+
+SPLUNK_TOKEN=""
+
+SPLUNK_URL="https://localhost:8088/services/collector/event"
